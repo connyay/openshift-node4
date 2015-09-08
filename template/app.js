@@ -7,7 +7,7 @@ let ip = env.OPENSHIFT_NODE4_IP || '127.0.0.1';
 http.createServer(function(req, res) {
     let body = `Welcome to node.js v4 on OpenShift!
   Everything seems to be in order.
-  Running io.js`;
+  Running node.js`;
     for (let v in process.versions) {
       body += `\n- ${v}: ${process.versions[v]}`;
     }
