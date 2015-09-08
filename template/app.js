@@ -1,11 +1,11 @@
 'use strict';
 let http = require('http');
 let env = process.env;
-let port = env.OPENSHIFT_IOJS_PORT || 1337;
-let ip = env.OPENSHIFT_IOJS_IP || '127.0.0.1';
+let port = env.OPENSHIFT_NODE4_PORT || 1337;
+let ip = env.OPENSHIFT_NODE4_IP || '127.0.0.1';
 
 http.createServer(function(req, res) {
-    let body = `Welcome to io.js on OpenShift!
+    let body = `Welcome to node.js v4 on OpenShift!
   Everything seems to be in order.
   Running io.js`;
     for (let v in process.versions) {
