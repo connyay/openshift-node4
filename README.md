@@ -7,8 +7,8 @@
 
 What this cartridge provides out of the box
 ---
-1. **node.js** ([latest stable](http://semver.io/node/stable) currently 4.0.0)
-2. **npm** (latest stable currently 2.14.2)
+1. **node.js** ([latest stable](http://semver.io/node/stable) currently 4.1.2)
+2. **npm** (latest stable currently 2.14.4)
 3. **[grunt](https://www.npmjs.com/package/grunt-cli)**
 4. **[gulp](https://www.npmjs.com/package/gulp)**
 5. **[forever](https://www.npmjs.com/package/forever)**
@@ -25,7 +25,7 @@ What this cartridge does out of the box
 
 Note
 ---
-For now I just dropped the contents of the node-v4.0.0.tar.xz [here](bin/node). I will move to resolving the latest stable and downloading on the gear in the near future.
+For now I just dropped the contents of the node-v4.1.2.tar.xz [here](bin/node). I will move to resolving the latest stable and downloading on the gear in the near future.
 
 Thanks!
 ---

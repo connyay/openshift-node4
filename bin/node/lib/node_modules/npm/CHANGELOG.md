@@ -1,3 +1,126 @@
+### v2.14.4 (2015-09-10):
+
+#### THE GREAT NODEv4 SAGA
+
+So [Node 4 is out now](https://nodejs.org/en/blog/release/v4.0.0/) and that's
+going to involve a number of things over in npm land. Most importantly, it's the
+last major release that will include the `2.x` branch of npm. That also means
+that `2.x` is going to go into LTS mode in the coming weeks -- once `npm@3`
+becomes our official `latest` release. You can most likely expect Node 5 to
+include `npm@3` by default, whenever that happens. We'll go into more detail
+about LTS at that point, as well, so keep your eyes peeled for announcements!
+
+#### NODE IS DEAD. LONG LIVE NODE!
+
+Node 4 being released means that a few things that used to be floating patches
+are finally making it right into npm proper. This week, we've got two such
+updates, both to dependencies:
+
+* [`505d9e4`](https://github.com/npm/npm/commit/505d9e40c13b8b0bb3f70ee9886f7b73ba569407)
+  `node-gyp@3.0.1`: Support for node nightlies and compilation for both node and
+  io.js without extra patching
+  ([@rvagg](https://github.com/rvagg))
+
+[@thefourtheye](https://github.com/thefourtheye) was kind enough to submit a
+*bunch* of PRs to npm's dependencies updating them to `graceful-fs@4.1.2`, which
+mainly makes it so we're no longer monkey-patching `fs`. The following are all
+updates related to this:
+
+* [`10cb189`](https://github.com/npm/npm/commit/10cb189c773fef804214018d57509cc7a943184b)
+  `write-file-atomic@1.1.3`
+  ([@thefourtheye](https://github.com/thefourtheye))
+* [`edfb80b`](https://github.com/npm/npm/commit/edfb80b39f8cfce9a993f139eb98248001198e09)
+  `tar@2.2.1`
+  ([@thefourtheye](https://github.com/thefourtheye))
+* [`aa6e1ee`](https://github.com/npm/npm/commit/aa6e1eede7d71fa69d7256afdfbaa3406bc39a5b)
+  `read-package-json@2.0.1`
+  ([@thefourtheye](https://github.com/thefourtheye))
+* [`18971a3`](https://github.com/npm/npm/commit/18971a361635ed3958ecd39b63930ae1e56f8612)
+  `read-installed@4.0.3`
+  ([@thefourtheye](https://github.com/thefourtheye))
+* [`a4cba71`](https://github.com/npm/npm/commit/a4cba71bd2532236fda7385bf55e8790cafd4f0a)
+  `fstream@1.0.8`
+  ([@thefourtheye](https://github.com/thefourtheye))
+* [`70a38e2`](https://github.com/npm/npm/commit/70a38e29418951ac61ab6cf269d188074fe8ac3a)
+  `fs-write-stream-atomic@1.0.4`
+  ([@thefourtheye](https://github.com/thefourtheye))
+* [`9cbd20f`](https://github.com/npm/npm/commit/9cbd20f691e37960e4ba12d401abd1069657cb47)
+  `fs-vacuum@1.2.7`
+  ([@thefourtheye](https://github.com/thefourtheye))
+
+#### OTHER PATCHES
+
+* [`c4dd521`](https://github.com/npm/npm/commit/c4dd5213b2f3283ea0392845e5f78cac4573529e)
+  [#9506](https://github.com/npm/npm/issues/9506) Make `npm link` work on
+  Windows when using node pre-release/RC releases.
+  ([@jon-hall](https://github.com/jon-hall))
+* [`b6bc29c`](https://github.com/npm/npm/commit/b6bc29c1401b3d6b570c09cbef1866bdb0436b59)
+  [#9544](https://github.com/npm/npm/issues/9549) `process.binding` is being
+  deprecated, so our only direct usage has been removed.
+  ([@ChALkeR](https://github.com/ChALkeR))
+
+#### MORE DEPENDENCIES!
+
+* [`d940594`](https://github.com/npm/npm/commit/d940594e479a7f012b6dd6952e8ef985ba2a6216)
+  `tap@1.4.1`
+  ([@isaacs](https://github.com/isaacs))
+* [`ee38486`](https://github.com/npm/npm/commit/ee3848669331fd98879a3175789d963543f67ce3)
+  `which@1.1.2`: Added tests for Windows-related dead code that was previously
+  helping a silent failure happen.  Travis stuff, too.
+  ([@isaacs](https://github.com/isaacs))
+
+#### DOC UPDATES
+
+* [`475daf5`](https://github.com/npm/npm/commit/475daf54ad07777938d1d7ee1a3e576961e84510)
+  [#9492](https://github.com/npm/npm/issues/9492) Clarify how `.npmignore` and
+  `.gitignore` are found and used by npm.
+  ([@addaleax](https://github.com/addaleax))
+* [`b2c391d`](https://github.com/npm/npm/commit/b2c391d7833249626a6d7650363a83bcc778717a)
+  `nopt@3.0.4`: Minor clarifications to docs about how array and errors work.
+  ([@zkat](https://github.com/zkat))
+
+### v2.14.3 (2015-09-03):
+
+#### TEAMS AND ORGS STILL BETA. CLI CODE STILL SOLID.
+
+Our closed beta for Teens and Orcs is happening! The web team is hard at work
+making sure everything looks pretty and usable and such. Once we fix things
+stemming from that beta, you can expect the feature to be available publicly.
+Some time after that, it'll even be available for free for FOSS orgs. It'll Be
+Done When It's Done™.
+
+#### OH GOOD, I CAN ACTUALLY UPSTREAM NOW
+
+Looks like last week's release foiled our own test suite when trying to upstream
+it to Node! Just a friendly reminder that no, `.npmrc` is no longer included
+then you pack/release a package! [@othiym23](https://github.com/othiym23) and
+[@isaacs](https://github.com/isaacs) managed to suss the really strange test
+failures resulting from that, and we've patched it in this release.
+
+* [`01a3428`](https://github.com/npm/npm/commit/01a3428534b754dca89a56fd1e49f55cb22f6f25)
+  [#9476](https://github.com/npm/npm/issues/9476) test: Recreate missing
+  `.npmrc` files when missing so downstream packagers can run tests on packed
+  npm.
+  ([@othiym23](https://github.com/othiym23))
+
+#### TALKING ABOUT THE CHANGELOG IN THE CHANGELOG IS LIKE, POMO OR SOMETHING
+
+* [`c1e7a83`](https://github.com/npm/npm/commit/c1e7a83c0ae7aadf01aecc57cf8a0ae2009d4da8)
+  [#9431](https://github.com/npm/npm/issues/9431) CHANGELOG: clarify
+  windows-related nature of patch
+  ([@saper](https://github.com/saper))
+
+#### devDependencies UPDATED
+
+No actual dep updates this week, but we're bumping a couple of devDeps:
+
+* [`8454835`](https://github.com/npm/npm/commit/84548351bfd63e3e305d195abbcad24c6b7c3e8e)
+  `tap@1.4.0`: Add `t.contains()` as alias to `t.match()`
+  ([@isaacs](https://github.com/isaacs))
+* [`13d2216`](https://github.com/npm/npm/commit/13d22161bcdeb6e1ed095d5ba2f77e6abfffa5eb)
+  `deep-equal@1.0.1`: Make `null == undefined` in non-strict mode
+  ([@isaacs](https://github.com/isaacs))
+
 ### v2.14.2 (2015-08-27):
 
 #### GETTING THAT PESKY `preferGlobal` WARNING RIGHT
@@ -6,7 +129,8 @@ So apparently the `preferGlobal` option hasn't quite been warning correctly for
 some time. But now it should be all better! tl;dr: if you try and install a
 dependency with `preferGlobal: true`, and it's _not already_ in your
 `package.json`, you'll get a warning that the author would really rather you
-install it with `--global`. :)
+install it with `--global`. This should prevent Windows PowerShell from thinking
+npm has failed just because of a benign warning.
 
 * [`bbb25f3`](https://github.com/npm/npm/commit/bbb25f30d582f8979168c79233a9f8f840974f90)
   [#8841](https://github.com/npm/npm/issues/8841)
