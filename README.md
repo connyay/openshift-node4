@@ -1,3 +1,6 @@
+# This project is no longer maintained. PRs will be accepted.
+
+
 # [node.js v4](https://nodejs.org/) cartridge for [OpenShift](https://www.openshift.com/)
 
 ## Usage
