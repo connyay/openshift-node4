@@ -10,8 +10,8 @@
 
 What this cartridge provides out of the box
 ---
-1. **node.js** ([latest stable](http://semver.io/node/stable) currently 4.2.3)
-2. **npm** (latest stable currently 2.14.7)
+1. **node.js** (latest LTS (v4 train) currently 4.2.4)
+2. **npm** (latest stable currently 2.14.12)
 3. **[grunt](https://www.npmjs.com/package/grunt-cli)**
 4. **[gulp](https://www.npmjs.com/package/gulp)**
 5. **[forever](https://www.npmjs.com/package/forever)**
