@@ -10,7 +10,7 @@
 
 What this cartridge provides out of the box
 ---
-1. **node.js** (latest LTS (v4 train) currently 4.3.0)
+1. **node.js** (latest LTS (v4 train) currently 4.3.1)
 2. **npm** (latest stable currently 2.14.12)
 3. **[grunt](https://www.npmjs.com/package/grunt-cli)**
 4. **[gulp](https://www.npmjs.com/package/gulp)**
@@ -28,7 +28,7 @@ What this cartridge does out of the box
 
 Note
 ---
-For now I just dropped the contents of the node-v4.3.0.tar.gz [here](bin/node). I will move to resolving the latest stable and downloading on the gear in the near future.
+For now I just dropped the contents of the node-v4.3.1.tar.gz [here](bin/node). I will move to resolving the latest stable and downloading on the gear in the near future.
 
 Thanks!
 ---
